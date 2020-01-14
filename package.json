@@ -1,0 +1,51 @@
+{
+  "name": "what2eat-server",
+  "version": "1.0.0",
+  "description": "The app helps you choose what to eat.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server --exec babel-node --config .nodemonrc.json",
+    "compile": "babel server test --out-dir dist --delete-dir-on-start --source-maps inline --copy-files",
+    "lint": "eslint -c .eslintrc.json server/**",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wk645/what2eat-server.git"
+  },
+  "author": "Zoey Woo Jeong Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wk645/what2eat-server/issues"
+  },
+  "homepage": "https://github.com/wk645/what2eat-server#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.0",
+    "@babel/core": "^7.8.0",
+    "@babel/node": "^7.8.0",
+    "@babel/preset-env": "^7.8.2",
+    "@babel/register": "^7.8.0",
+    "axios": "^0.19.1",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-import-resolver-babel-module": "^5.1.1",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "prettier": "^1.19.1"
+  }
+}
