@@ -73,10 +73,12 @@ class ZomatoService {
     }
   }
 
-  async search(entityId, entityType, cuisinesId) {
+  async search(cuisinesId) {
+    // console.log('e e c', entityId, entityType, cuisinesId, typeof entityId, typeof entityType, typeof cuisinesId);
+    // https://developers.zomato.com/api/v2.1/search?entity_id=280&entity_type=city&cuisines=1035&sort=rating&order=desc
     try {
-      const result = await this._zomato.get(`
-        /search?entity_id=${entityId}&entity_type=${entityType}&cuisines=${cuisinesId}&sort=rating&order=desc`);
+      const result = await this._zomato.get(`/search?entity_id=280&entity_type=city&cuisines=${cuisinesId}&sort=rating&order=desc`);
+      // console.log('rrr', result.data.restaurants);
 
       if (result && result.data) {
         return result.data.restaurants;

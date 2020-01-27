@@ -1,15 +1,27 @@
 import ZomatoService from "../../integrations/ZomatoService";
+import ZomatoCodes from "../../../common/zomatoCodes.json";
+// console.log('ZZZ', ZomatoCodes.67.toString());
 
 export class Controller {
   async search(req, res) {
     const { cuisinesId } = req.params;
-    const { entityId, entityType } = req.body;
+    // const { entityId, entityType } = req.query;
 
-    if (!cuisinesId || !entityId || !entityType) {
+    console.log('params', cuisinesId);
+    // const stringedId = cuisinesId.toString();
+    // console.log('sss', stringedId);
+
+    if (!cuisinesId) {
       return res.status(400).json("Missing required parameters");
     }
 
-    const result = await ZomatoService.search(entityId, entityType, cuisinesId);
+    // const entityId = ZomatoCodes.stringedId;
+    // console.log('CCC eee', entityId);
+    // const entityType = 'city';
+
+    const result = await ZomatoService.search(cuisinesId);
+
+    console.log('result', result);
 
     let customRestaurant = {};
     const restaurants = [];
